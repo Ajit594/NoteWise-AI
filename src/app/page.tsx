@@ -23,11 +23,25 @@ export default function Home() {
   const [aiResults, setAiResults] = useState<AIResults | null>(null);
   const { toast } = useToast();
 
-  const handleGenerate = async (notes: string) => {
+  const handleGenerate = async (notes: string | null, file?: File) => {
     setIsLoading(true);
     setAiResults(null);
     try {
-      const results = await generateStudyAids(notes);
+      let fileDataUri: string | undefined = undefined;
+      if (file) {
+        fileDataUri = await new Promise((resolve, reject) => {
+          const reader = new FileReader();
+          reader.onload = (event) => {
+            resolve(event.target?.result as string);
+          };
+          reader.onerror = (error) => {
+            reject(error);
+          };
+          reader.readAsDataURL(file);
+        });
+      }
+
+      const results = await generateStudyAids(notes, fileDataUri);
       if (results) {
         setAiResults(results);
       } else {
@@ -44,6 +58,7 @@ export default function Home() {
       setIsLoading(false);
     }
   };
+
 
   const handleReset = () => {
     setAiResults(null);
