@@ -32,7 +32,7 @@ export default function FlashcardsTab({ flashcards }: FlashcardsTabProps) {
         {flashcards.map((card, index) => (
           <CarouselItem key={index} className="md:basis-1/2 lg:basis-1/3">
             <div className="p-1">
-              <Flashcard question={card.question} answer={card.answer} />
+              <Flashcard question={card.question} answer={card.answer} imageQuery={card.imageQuery} />
             </div>
           </CarouselItem>
         ))}

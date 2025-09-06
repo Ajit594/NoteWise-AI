@@ -19,6 +19,7 @@ const GenerateFlashcardsOutputSchema = z.array(
   z.object({
     question: z.string().describe('The flashcard question.'),
     answer: z.string().describe('The flashcard answer.'),
+    imageQuery: z.string().describe('A one or two word search query for an image related to the question. For example: "galaxy space"'),
   })
 );
 export type GenerateFlashcardsOutput = z.infer<typeof GenerateFlashcardsOutputSchema>;
@@ -33,7 +34,7 @@ const prompt = ai.definePrompt({
   name: 'generateFlashcardsPrompt',
   input: {schema: GenerateFlashcardsInputSchema},
   output: {schema: GenerateFlashcardsOutputSchema},
-  prompt: `Convert the following notes into flashcards. Format as JSON with 'question' and 'answer':\n\n{{{notes}}}`,
+  prompt: `Convert the following notes into flashcards. Format as JSON with 'question', 'answer', and 'imageQuery' which is a 1-2 word search query for a relevant image.\n\n{{{notes}}}`,
 });
 
 const generateFlashcardsFlow = ai.defineFlow(
