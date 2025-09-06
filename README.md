@@ -3,9 +3,6 @@
 **Turn your notes into knowledge, instantly.**
 
 NoteWise AI is an intelligent study companion that leverages the power of Generative AI to automatically create summaries, interactive flashcards, and quizzes from your course notes. Stop spending hours creating study materials and start focusing on what matters most: learning.
-
-[![Deploy to Firebase](https://www.gstatic.com/mobilesdk/240423_mobilesdk/studio-app-hosting-deploy-grey.svg)](https://console.firebase.google.com/project/_/hosting/sites)
-
 ---
 
 ## 🚀 The Problem
@@ -32,7 +29,6 @@ NoteWise AI is built with a modern, scalable, and powerful tech stack:
 *   **Language:** [TypeScript](https://www.typescriptlang.org/)
 *   **Styling:** [Tailwind CSS](https://tailwindcss.com/) & [ShadCN UI](https://ui.shadcn.com/)
 *   **Generative AI:** [Google's Genkit](https://firebase.google.com/docs/genkit) & Gemini Models
-*   **Deployment:** [Firebase App Hosting](https://firebase.google.com/docs/hosting)
 
 We used **Google's Genkit** to orchestrate multiple calls to the Gemini AI model, enabling us to generate structured JSON for summaries, flashcards, and quizzes in a single, efficient server action. This includes advanced features like extracting text from documents and generating relevant image queries for the flashcards.
 
