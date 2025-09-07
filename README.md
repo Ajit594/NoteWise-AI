@@ -1,4 +1,4 @@
-# NoteWise AI 🧠✨
+# NoteWise AI 🧠✨(vercel link- https://note-wise-l9aa0kwpj-ajits-projects-3c60f075.vercel.app/)
 
 **Turn your notes into knowledge, instantly.**
 
