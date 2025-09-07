@@ -45,7 +45,7 @@ We used **Google's Genkit** to orchestrate multiple calls to the Gemini AI model
 
 1.  **Clone the repository:**
     ```bash
-    git clone https://your-repo-url/notewise-ai.git
+    https://github.com/Ajit594/NoteWise-AI.git
     cd notewise-ai
     ```
 
